@@ -200,6 +200,19 @@ For any service compatible with the Anthropic API format.
 
 Use this if your provider is not listed but supports Anthropic-compatible APIs.
 
+**Example — IO Intelligence (io.net) through a local proxy.** IO Intelligence serves an OpenAI-compatible Chat Completions API rather than the Anthropic format, so run [claude-code-router](https://github.com/musistudio/claude-code-router) as a local translation proxy:
+
+1. Install and open the router (Node.js 22+):
+
+   ```bash
+   npm install -g @musistudio/claude-code-router
+   ccr ui
+   ```
+
+2. Under **Providers**, add a provider with a custom endpoint: Base URL `https://api.intelligence.io.solutions/api/v1`, your IO Intelligence API key, protocol **OpenAI Chat**, and the models to expose (for example, `meta-llama/Llama-3.3-70B-Instruct`).
+3. Start the router — the gateway listens on `http://127.0.0.1:3456`.
+4. In Verdent, add an **Anthropic-Compatible (Custom Endpoint)** provider with Base URL `http://127.0.0.1:3456` and the models configured in the router, then **Save** and **Test Connection**.
+
 ### Advanced Options
 
 In the provider configuration panel, expand **Advanced Options** to access a JSON editor:
