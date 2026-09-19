@@ -204,7 +204,7 @@ Use this if your provider is not listed but supports Anthropic-compatible APIs.
 
 <Steps>
   <Step title="Install the router">
-    Requires Node.js 22–24 (the router's SQLite dependency does not yet support Node 25).
+    Requires Node.js 22 or newer.
 
     ```bash
     npm install -g @musistudio/claude-code-router
@@ -220,7 +220,7 @@ Use this if your provider is not listed but supports Anthropic-compatible APIs.
     Start the router — the gateway listens on `http://127.0.0.1:3456`. Then copy a client key from the router's **API Keys** page (for example, the default Local Gateway key); Verdent uses this key to authenticate to the gateway.
   </Step>
   <Step title="Add the endpoint in Verdent">
-    In Verdent, add an **Anthropic-Compatible (Custom Endpoint)** provider with Base URL `http://127.0.0.1:3456`, the router client key as the API key, and the models configured in the router — enter model ids as configured (for example, `meta-llama/Llama-3.3-70B-Instruct`). Then **Save** and **Test Connection**.
+    In Verdent, add an **Anthropic-Compatible (Custom Endpoint)** provider with Base URL `http://127.0.0.1:3456`, the router client key as the API key, and the models configured in the router — enter model ids as configured (for example, `meta-llama/Llama-3.3-70B-Instruct`). Then click **Test Connection** and **Save**.
   </Step>
 </Steps>
 
